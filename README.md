@@ -1,5 +1,7 @@
 ###Solace Stress Test C###
 
+*Note: requires a solace appliance that accepts TCP connections.*
+
 ####Run It####
 To run run the bash script `run.sh` from SolaceStressTests/C. `sh run.sh`
 By default it will pin cores 22 and 23 for the consumer and cores 24 and 25 for the producer (change taskset params. The output from the consumer is directed to `consumer.out` while the output from the producer is directed to `producer.out`.
@@ -7,7 +9,7 @@ By default it will pin cores 22 and 23 for the consumer and cores 24 and 25 for 
 Beforehand you will need to alter the config.json file to your liking (all fields are required).
 ```
 {
-  "hostname": "<hostname or ip>:<port (if not port provided then defaults to >",
+  "hostname": "<hostname or ip>:<port (if not port provided then defaults to 55555>",
   "vpn": "<vpn name>",
   "username": "<username>",
   "password": "<password>",
