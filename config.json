@@ -1,0 +1,12 @@
+{
+  "hostname": "_____________",
+  "vpn": "_____________",
+  "username": "_____________",
+  "password": "_____________",
+  "topic": "some/random/topic",
+  "warmups": 1000000,
+  "runs": 2000000,
+  "threshold": 150,
+  "payload": 8,
+  "sendDirect": false
+}
