@@ -20,7 +20,7 @@ stress_config config;
  * messageReceiveCallback
  *
  * The message callback is invoked for each Direct message received by
- * the Session. In this sample, the message is printed to the screen.
+ * the Session. In this case: record the message receive time in receive_times
  *****************************************************************************/
 solClient_rxMsgCallback_returnCode_t
 messageReceiveCallback ( solClient_opaqueSession_pt opaqueSession_p, solClient_opaqueMsg_pt msg_p, void *user_p )
