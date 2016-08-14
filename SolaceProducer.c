@@ -139,12 +139,21 @@ main ( int argc, char *argv[] )
     solClient_msg_setDestination ( msg_p, &destination, sizeof ( destination ) );
 
     void* payload = malloc(config.payload_size_bytes);
+    if(payload == NULL) { 
+        printf("ERROR during allocation of payload.");
+        return 1;
+    }
+
     /* Add some content to the message. */
     solClient_msg_setBinaryAttachment ( msg_p, payload, ( solClient_uint32_t ) config.payload_size_bytes);
 
     printf ( "About to send %d message(s) of %d bytes to topic '%s'...\n", config.run_count, config.payload_size_bytes, config.topic );
     
     struct timeval* send_times =  malloc(sizeof(struct timeval) * (config.run_count));
+    if(send_times == NULL) { 
+        printf("ERROR during allocation of send times.");
+        return 1;
+    }
     int i;
     for (i = 0; i < config.warmup_count; i++) {
         solClient_session_sendMsg ( session_p, msg_p );

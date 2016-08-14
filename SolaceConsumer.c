@@ -129,6 +129,10 @@ main ( int argc, char *argv[] )
     }
 
     receive_times = malloc(sizeof(struct timeval) * (config.run_count));
+    if(receive_times == NULL) { 
+        printf("ERROR during allocation of receive times.");
+        return 1;
+    }
 
     // subscribe
     solClient_session_topicSubscribeExt ( session_p,
